@@ -11,7 +11,9 @@ const SignUp = ({ onSuccess, onSwitchToLogin }) => {
     e.preventDefault()
     try {
       // request to backend to signup
-      const response = await fetch('http://localhost:3000/signup', {
+      // const response = await fetch('http://localhost:3000/signup', {
+      
+      const response = await fetch('https://password-manager-jno6.onrender.com/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)

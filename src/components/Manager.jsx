@@ -14,7 +14,8 @@ const Manager = ({ user }) => {
       return
     }
 
-    const req = await fetch(`http://localhost:3000/passwords?userId=${user._id}`)
+    // const req = await fetch(`http://localhost:3000/passwords?userId=${user._id}`)
+    const req = await fetch(`https://password-manager-jno6.onrender.com/passwords?userId=${user._id}`)
     const Passwords = await req.json()
 
     if (Array.isArray(Passwords) && Passwords.length > 0) {
@@ -45,7 +46,8 @@ const Manager = ({ user }) => {
         password: form.password
       }
 
-      const response = await fetch('http://localhost:3000/passwords', {
+      // const response = await fetch('http://localhost:3000/passwords', {
+      const response = await fetch('https://password-manager-jno6.onrender.com/passwords', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -122,7 +124,8 @@ const Manager = ({ user }) => {
     })
     setPasswordArray((prev) => prev.filter((_, i) => i !== index))
 
-    await fetch(`http://localhost:3000/passwords/${passwordToEdit._id}`, {
+    // await fetch(`http://localhost:3000/passwords/${passwordToEdit._id}`, {
+    await fetch(`https://password-manager-jno6.onrender.com/passwords/${passwordToEdit._id}`, {
       method: 'DELETE'
     })
 
@@ -150,7 +153,8 @@ const Manager = ({ user }) => {
     const updatedpasswordarray = passwordarray.filter((_, i) => i !== index)
     setPasswordArray(updatedpasswordarray)
 
-    await fetch(`http://localhost:3000/passwords/${passwordToDelete._id}`, {
+    // await fetch(`http://localhost:3000/passwords/${passwordToDelete._id}`, {
+    await fetch(`https://password-manager-jno6.onrender.com/passwords/${passwordToDelete._id}`, {
       method: 'DELETE'
     })
 

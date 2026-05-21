@@ -12,7 +12,8 @@ const Login = ({ onSuccess, onSwitchToSignUp }) => {
     try {
 
       // request to backend to login
-      const response = await fetch('http://localhost:3000/login', {
+      // const response = await fetch('http://localhost:3000/login',
+      const response = await fetch('https://password-manager-jno6.onrender.com/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
