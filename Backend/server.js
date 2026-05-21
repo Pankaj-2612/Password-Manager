@@ -3,11 +3,14 @@ require('dotenv').config()
 const { MongoClient, ObjectId } = require('mongodb')
 const cors = require('cors')
 
-const url = 'mongodb://localhost:27017'
+// const url = 'mongodb://localhost:27017'
+const url = process.env.MONGO_URI
+
 const client = new MongoClient(url)
 const dbName = 'Passop'
 const app = express()
-const port = 3000
+// const port = 3000
+const port = process.env.PORT || 3000
 
 app.use(express.json())
 app.use(cors())
